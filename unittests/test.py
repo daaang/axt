@@ -18,9 +18,7 @@
 from hamcrest import *
 import unittest
 
-from axt import hello
-
 class WorkingEnvironmentTest (unittest.TestCase):
 
-    def test_hello_str_exists (self):
-        assert_that(hello, is_(equal_to("What's up my droogs")))
+    def test_nothing (self):
+        pass
