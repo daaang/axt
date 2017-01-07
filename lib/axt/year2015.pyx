@@ -17,5 +17,9 @@
 # along with Axt. If not, see <http://www.gnu.org/licenses/>.
 cdef class Federal1040:
 
+    @property
+    def gross_income (self):
+        return 0
+
     def __bool__ (self):
         return False
