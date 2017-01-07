@@ -1,0 +1,6 @@
+.*.swp
+*.c
+__pycache__/
+Axt.egg-info/
+build/
+dist/
