@@ -14,4 +14,4 @@ clean:
 	find . -name __pycache__ | xargs rm -r
 
 test: clean build
-	PYTHONPATH=build/lib.linux-x86_64-3.4 $(PY) -m unittest
+	bash run_tests.sh
