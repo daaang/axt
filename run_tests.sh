@@ -21,10 +21,13 @@ echo_failure() {
   fi
 }
 
+echo ""
 if PYTHONPATH=$LIB python3 -m unittest; then
+  echo ""
   make clean
   echo_success
 
 else
+  echo ""
   echo_failure
 fi
