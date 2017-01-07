@@ -18,7 +18,7 @@
 cdef class Federal1040:
 
     @property
-    def gross_income (self):
+    def total_income (self):
         return 0
 
     def __bool__ (self):

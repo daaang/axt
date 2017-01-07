@@ -30,4 +30,4 @@ class GivenNullFederal1040 (unittest.TestCase):
         assert_that(self.tax, evaluates_to_false())
 
     def test_income_begins_at_zero (self):
-        assert_that(self.tax.gross_income, is_(equal_to(0)))
+        assert_that(self.tax.total_income, is_(equal_to(0)))
