@@ -21,8 +21,10 @@ import unittest
 
 from axt.year2015 import Federal1040
 
-class WorkingEnvironmentTest (unittest.TestCase):
+class GivenNullFederal1040 (unittest.TestCase):
+
+    def setUp (self):
+        self.tax = Federal1040()
 
     def test_nothing (self):
-        new_return = Federal1040()
-        assert_that(new_return, evaluates_to_false())
+        assert_that(self.tax, evaluates_to_false())
