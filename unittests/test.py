@@ -31,3 +31,6 @@ class GivenNullFederal1040 (unittest.TestCase):
 
     def test_income_begins_at_zero (self):
         assert_that(self.tax.total_income, is_(equal_to(0)))
+
+    def test_total_tax_begins_at_zero (self):
+        assert_that(self.tax.total_tax, is_(equal_to(0)))

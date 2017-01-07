@@ -21,5 +21,9 @@ cdef class Federal1040:
     def total_income (self):
         return 0
 
+    @property
+    def total_tax (self):
+        return 0
+
     def __bool__ (self):
         return False
