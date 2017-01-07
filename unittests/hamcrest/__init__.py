@@ -15,14 +15,5 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Axt. If not, see <http://www.gnu.org/licenses/>.
-from hamcrest import *
-from .hamcrest import *
-import unittest
-
-from axt.year2015 import Federal1040
-
-class WorkingEnvironmentTest (unittest.TestCase):
-
-    def test_nothing (self):
-        new_return = Federal1040()
-        assert_that(new_return, evaluates_to_false())
+from .truthiness import evaluates_to_true, evaluates_to_false
+from .composed_assert import ComposedAssertion

@@ -15,14 +15,24 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Axt. If not, see <http://www.gnu.org/licenses/>.
-from hamcrest import *
-from .hamcrest import *
-import unittest
+from hamcrest.core.base_matcher import BaseMatcher
 
-from axt.year2015 import Federal1040
+class ComposedAssertion (BaseMatcher):
 
-class WorkingEnvironmentTest (unittest.TestCase):
+    def _matches (self, item):
+        self.particular_matcher = None
+        for matcher in self.assertion(item):
+            self.particular_matcher = matcher
 
-    def test_nothing (self):
-        new_return = Federal1040()
-        assert_that(new_return, evaluates_to_false())
+            if matcher.matches(item):
+                continue
+
+            return False
+
+        return True
+
+    def describe_to (self, description):
+        self.particular_matcher.describe_to(description)
+
+    def describe_mismatch (self, item, description):
+        self.particular_matcher.describe_mismatch(item, description)
