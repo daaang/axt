@@ -15,5 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Axt. If not, see <http://www.gnu.org/licenses/>.
-class Federal1040:
-    pass
+cdef class Federal1040:
+
+    def __bool__ (self):
+        return False

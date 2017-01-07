@@ -24,3 +24,4 @@ class WorkingEnvironmentTest (unittest.TestCase):
 
     def test_nothing (self):
         new_return = Federal1040()
+        assert_that(bool(new_return), is_(False))
