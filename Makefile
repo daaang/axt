@@ -7,6 +7,9 @@ dist: build
 	$(PY) setup.py sdist
 	$(PY) setup.py bdist_wheel
 
+install: build
+	$(PY) setup.py install
+
 clean:
 	touch lib/Axt.egg-info build dist del.c __pycache__
 	rm -r lib/Axt.egg-info build dist
