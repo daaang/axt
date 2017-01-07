@@ -15,4 +15,5 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Axt. If not, see <http://www.gnu.org/licenses/>.
-Federal1040 = None
+class Federal1040:
+    pass

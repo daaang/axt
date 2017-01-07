@@ -23,4 +23,4 @@ from axt.year2015 import Federal1040
 class WorkingEnvironmentTest (unittest.TestCase):
 
     def test_nothing (self):
-        pass
+        new_return = Federal1040()
