@@ -6,7 +6,6 @@ python:
 - "3.5"
 - "3.6"
 - "nightly"
-- "pypy3"
 install:
 - pip install PyHamcrest
 - pip install Cython --install-option="--no-cython-compile"
