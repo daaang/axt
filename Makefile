@@ -1,23 +1,27 @@
 PY=python3
+SETUP=$(PY) setup.py
+GENERATED_DIRS=lib/Axt.egg-info build dist
+QUICKTEST=unittests/.quick_test.sh
+FULLTEST=unittests/.test_and_clean.sh
 
 build: setup.py
-	$(PY) setup.py build
+	$(SETUP) build
 
 dist: build
-	$(PY) setup.py sdist
-	$(PY) setup.py bdist_wheel
+	$(SETUP) sdist
+	$(SETUP) bdist_wheel
 
 install: build
-	$(PY) setup.py install
+	$(SETUP) install
 
 clean:
-	touch lib/Axt.egg-info build dist del.c __pycache__
-	rm -r lib/Axt.egg-info build dist
+	touch $(GENERATED_DIRS) del.c __pycache__
+	rm -r $(GENERATED_DIRS)
 	find . -name '*.c' | xargs rm
 	find . -name __pycache__ | xargs rm -r
 
 test: clean build
-	bash unittests/.test_and_clean.sh
+	bash $(FULLTEST)
 
 quicktest: build
-	bash unittests/.quick_test.sh
+	bash $(QUICKTEST)
