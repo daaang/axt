@@ -9,6 +9,11 @@ Currently in Planning
 I have basically no idea how I want this to work yet. I'm in the very
 beginning phases of this project.
 
+Will this be ready in time to do my taxes for 2016?
+---------------------------------------------------
+
+Absolutely not. Definitely do not count on this ever being done.
+
 GNU General Public License v3 (GPLv3)
 -------------------------------------
 
