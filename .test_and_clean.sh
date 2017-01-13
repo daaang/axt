@@ -1,20 +1,40 @@
+the_terminal_is_very_narrow() {
+  [ `tput cols` -lt 80 ]
+}
+
+echo_wide_success() {
+  echo -n "[1;37;42m                                    Success."
+  echo "                                    [0m"
+}
+
+echo_wide_failure() {
+  echo -n "[1;37;41m                                    Failure."
+  echo "                                    [0m"
+}
+
+echo_narrow_success() {
+  echo "[32mSuccess.[0m"
+}
+
+echo_narrow_failure() {
+  echo "[31mFailure.[0m"
+}
+
 echo_success() {
-  if [ `tput cols` -lt 80 ]; then
-    echo "[32mSuccess.[0m"
+  if the_terminal_is_very_narrow; then
+    echo_narrow_success
 
   else
-    echo -n "[1;37;42m                                    Success."
-    echo "                                    [0m"
+    echo_wide_success
   fi
 }
 
 echo_failure() {
-  if [ `tput cols` -lt 80 ]; then
-    echo "[31mFailure.[0m"
+  if the_terminal_is_very_narrow; then
+    echo_narrow_failure
 
   else
-    echo -n "[1;37;41m                                    Failure."
-    echo "                                    [0m"
+    echo_wide_failure
   fi
 }
 
