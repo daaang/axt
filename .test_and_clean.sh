@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
-LIB="build/lib.linux-x86_64-3.4"
-
 echo_success() {
   if [ `tput cols` -lt 80 ]; then
     echo "[32mSuccess.[0m"
@@ -22,7 +19,7 @@ echo_failure() {
 }
 
 echo ""
-if PYTHONPATH=$LIB python3 -m unittest; then
+if bash .quick_test.sh; then
   echo ""
   make clean
   echo_success
