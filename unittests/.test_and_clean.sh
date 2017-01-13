@@ -39,7 +39,7 @@ echo_failure() {
 }
 
 echo ""
-if bash .quick_test.sh; then
+if bash unittests/.quick_test.sh; then
   echo ""
   make clean
   echo_success
